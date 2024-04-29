@@ -12,6 +12,7 @@ if (fuelLevel >= 20000) {
    console.log('Fuel level cleared.');
    launchReady = true;
 } else {
+   console.log("No hurry to launch the shuttle");
    console.log('WARNING: Insufficient fuel!');
    launchReady = false;
 }
