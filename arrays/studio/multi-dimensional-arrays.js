@@ -1,13 +1,27 @@
+const input = require('readline-sync');
+
 let food = "water bottles,meal packs,snacks,chocolate";
 let equipment = "space suits,jet packs,tool belts,thermal detonators";
 let pets = "parrots,cats,moose,alien eggs";
 let sleepAids = "blankets,pillows,eyepatches,alarm clocks";
 
 //1) Use split to convert the strings into four cabinet arrays. Alphabetize the contents of each cabinet.
+const foodCabinet = food.split(" ");
+const equipmentCabinet = equipment.split(" ");
+const petsCabinet = pets.split(" ");
+const sleepAidsCabinet = sleepAids.split(" ");
 
 //2) Initialize a cargoHold array and add the cabinet arrays to it. Print cargoHold to verify its structure.
 
+const cargoHold = foodCabinet.concat(equipmentCabinet,petsCabinet,sleepAidsCabinet);
+console.log("CargoHold : " + cargoHold);
+
 //3) Query the user to select a cabinet (0 - 3) in the cargoHold.
+
+// let userInput = input.question("Please enter specific element from cabinet(0 - 3) : ");
+
+
+
 
 //4) Use bracket notation and a template literal to display the contents of the selected cabinet. If the user entered an invalid number, print an error message.
 
