@@ -33,6 +33,18 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
 function askForNumber() {
   numMeals = input.question("How many meals would you like to make? : ");
   /// CODE YOUR SOLUTION TO PART B here ///
+  while(true)
+    {
+      if(numMeals >= 1 && numMeals <= 6)
+        {
+          break;
+        }
+        else
+        {
+          console.log("Please enter valid number between 1-6 : " + numMeals);
+          break;
+        }
+    }
 
  return numMeals;
 }
