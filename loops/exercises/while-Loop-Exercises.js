@@ -7,26 +7,26 @@
 
   let fuelLevel = 0 , numAstrounauts = 0, altitude = 0;
 
-// while (fuelLevel >= 5000 || fuelLevel < 30000 || isNaN(fuelLevel)) {
-//    fuelLevel = input.question("Enter the starting fuel level: ");
-// }
+while (fuelLevel >= 5000 || fuelLevel < 30000 || isNaN(fuelLevel)) {
+   fuelLevel = input.question("Enter the starting fuel level: ");
+}
 
 
 //b. Use a second loop to query the user for the number of astronauts (up to a maximum of 7). Validate the entry.
 
 
-    // numAstrounauts = input.question("Enter the number of astronauts : ");
+    numAstrounauts = input.question("Enter the number of astronauts : ");
 
-    // do{
-    //   if(numAstrounauts < 7)
-    //     {
-    //         break;
-    //     }
-    //     else
-    //     {
-    //         console.log("The Spaceship is overloaded,Maximum limit is 7 only");
-    //     }
-    // }while(!numAstrounauts);
+    do{
+      if(numAstrounauts < 7)
+        {
+            break;
+        }
+        else
+        {
+            console.log("The Spaceship is overloaded,Maximum limit is 7 only");
+        }
+    }while(!numAstrounauts);
 
     
 //c. Use a final loop to monitor the fuel status and the altitude of the shuttle. Each iteration, decrease the fuel level by 100 units for each astronaut aboard. Also, increase the altitude by 50 kilometers.
