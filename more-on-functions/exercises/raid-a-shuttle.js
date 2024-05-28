@@ -38,6 +38,7 @@ console.log("Hold status: " + holdStatus(cargoHold));
 /* Next, liberate some of that glorious cargo.
  * /
 
+
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
 
 //b). You need to swipe two items from the cargo hold. Choose well. Stealing water ain’t gonna get us rich. Put the swag into a new array and return it from the function.
@@ -54,4 +55,19 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
+
+*/
+
+let normalFunction = function(levelValue)
+{
+  if (levelValue > 100000){
+    return 'green';
+  } else if (levelValue > 50000){
+    return 'yellow';
+  } else {
+    return 'red';
+  }
+}
+
+console.log(normalFunction(7500));
 
