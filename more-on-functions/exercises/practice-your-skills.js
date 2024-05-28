@@ -34,25 +34,25 @@ c) Print the new array to confirm your work.
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
 
-let replacedArray = function(arrayValue)
+let mapArray = arr.map(function(arrayValue)
 {
-    for(let i = 0; i < arrayValue.length; i++)
-        {
-            if(typeof arrayValue[i] === "string")
+            if(typeof arrayValue === "number")
                 {
-                    arrayValue[i] = 'ARRR!';
+                    arrayValue = arrayValue * 3;
                 }
-               else
+               else if(typeof arrayValue === 'string')
                 {
-                    arrayValue[i] = arrayValue[i] * 3;
+                    arrayValue = 'ARRR!';
                 }
-        }
+                else
+                {
+                    arrayValue;
+                }
         return arrayValue;
-};
+});
 
-let mapArray = arr.map(replacedArray);
 console.log(arr);
-console.log(replacedArray(arr));
+console.log(mapArray);
 
 
 
