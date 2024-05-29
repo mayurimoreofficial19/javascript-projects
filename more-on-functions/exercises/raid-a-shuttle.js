@@ -58,7 +58,7 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 */
 
-// let normalFunction = function(levelValue)
+// let nonSuspiciousFunction = function(levelValue)
 // {
 //   if (levelValue > 100000){
 //     return 'green';
@@ -80,7 +80,9 @@ let nonSuspiciousFunction = function(a) {
      return a;
   }
 };
-console.log(nonSuspiciousFunction(7500));
+
+let nonSuspiciousFunctionValue = nonSuspiciousFunction(7500);
+console.log(nonSuspiciousFunctionValue);
 
 // stealing two items from cargohold
 cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
@@ -90,12 +92,15 @@ let deckMops = function(itemsInCargo)
 {
   newCargoArray = itemsInCargo.slice(3, 5);
   cargoHold.splice(3,2,'dust','stolen');
-      return newCargoArray;
+  return newCargoArray;
 };
-console.log(deckMops(cargoHold));
+
+let deckMopItems = deckMops(cargoHold);
+
+console.log(deckMopItems);
 console.log(cargoHold);
 
-//
+//Raid a Shuttle
 let irs = function(levelOfFuel, itemsInCargo) {
 
   let arr = deckMops(itemsInCargo);
@@ -103,5 +108,5 @@ let irs = function(levelOfFuel, itemsInCargo) {
   return `Raided ${nonSuspiciousFunction(fuelLevel)} kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
 };
 
-console.log(irs(75000,newCargoArray));
+console.log(irs(nonSuspiciousFunctionValue,deckMopItems));
 
