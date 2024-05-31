@@ -16,7 +16,7 @@ function sortArray(arr) {
     //step 2 take it out from the array and put it into new array
     //step 3 find the next smallest item
 
-    while (!arr.length == 0) {
+    while (arr.length !== 0) {
 
        
             let minimumIndex = 0;
@@ -42,6 +42,3 @@ console.log("Sorted Array : " , sortArray(nums3));
 // console.log("nums1 : " + nums1);
 
 
-// 5   10     2   42
-
-//     0        1
