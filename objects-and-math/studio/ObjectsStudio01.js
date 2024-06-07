@@ -1,10 +1,53 @@
 // Code your selectRandomEntry function here:
 
+let idNumbers = [291, 414, 503, 599, 796, 890];
+
+let newArray = [];
+let randnum = [];
+
+function selectRandomEntry(arrIDNumber)
+{
+    let indexNum = Math.floor(Math.random() * arrIDNumber.length);
+    return arrIDNumber[indexNum];
+}
+
+//**saving random number in randnum array***
+
+for(let i = 0; i < idNumbers.length; i++)
+  {
+    randnum.push(selectRandomEntry(idNumbers));
+  }
+console.log("random array : " + randnum);
+
+//**pushing and selecting first 3 ID's from newarray***
+for(let i = 0; i < randnum.length; i++)
+  {
+    //!newArray.includes(randnum[i]) && newArray.indexOf(randnum[i]) === -1
+    if(newArray.includes(randnum[i]) === false)
+      {
+        newArray.push(randnum[i]);
+      }
+  }
+  let randomArray = [];
+  randomArray = newArray.splice(0,3)
+  console.log(randomArray);
 
 // Code your buildCrewArray function here:
-
-
-let idNumbers = [291, 414, 503, 599, 796, 890];
+let crewArray = [];
+function buildCrewArray(randomIDArray,candidateObjectArray)
+{
+    for(let Index = 0; Index < randomIDArray.length; Index++)
+      {
+        for(let jIndex = 0; jIndex < candidateObjectArray.length; jIndex++)
+          {
+            if(candidateObjectArray[jIndex].astronautID === randomIDArray[Index])
+              {
+                crewArray.push(candidateObjectArray[jIndex]);
+              }
+          }
+      }
+      return crewArray;
+}
 
 // Here are the candidates and the 'animals' array:
 let candidateA = {
@@ -52,4 +95,7 @@ let candidateF = {
 
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
 
+let crewArrayFinal = buildCrewArray(randomArray,animals);
+
 // Code your template literal and console.log statements:
+console.log(`${crewArrayFinal[0].name}, ${crewArrayFinal[1].name}, and ${crewArrayFinal[2].name} are going to space!`);

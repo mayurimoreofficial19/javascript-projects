@@ -51,4 +51,38 @@ let candidateA = {
  };
  
  let crew = [candidateB,candidateD,candidateF];
+ let totalCrew = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
+
+//  function orbitCircumference(radius = 2000)
+// {
+//     let circumference = 2 * 3.14 * radius;
+//     return Math.round(circumference);
+// }
+let o2Array = [];
+
+ function missionDuration(orbitCompleted, orbitRadius, orbitSpeed,arr)
+{
+    let hrs = ((2 * 3.14 * orbitRadius)/orbitSpeed) * orbitCompleted;
+    for(let i = 0; i < arr.length; i++)
+      {
+          o2Array.push(arr[i].o2Used(hrs)) + o2Array.push(arr[i]);
+          o2Array.sort(function(a,b) {return a - b});
+      }
+     // o2Array.sort(function(a,b) {return a - b});
+    return o2Array;
+}
+
+console.log(missionDuration(3,2000,28000,totalCrew));
+
+ function crewByMinO2(arr)
+ {
+  for(let i = 0; i < arr.length; i++)
+    {
+      arr.sort(function(a,b) {return b - a});
+    }
+    return arr.splice(0,3);
+ }
+
+ 
+ console.log("Sorted Array : " + crewByMinO2(o2Array));
  
