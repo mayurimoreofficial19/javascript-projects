@@ -98,3 +98,24 @@ console.log(makeFunPhrase('Fun'));
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
+
+function area(length, width)
+{
+    
+    if(width == undefined)
+        {
+            return length * length;
+            
+        }
+        else
+        {
+            return length * width;
+        }
+    
+}
+
+
+console.log("Area of Rectangle : " + area(2,4));
+console.log("Area of Rectangle : " + area(14,7));
+console.log("Area of Rectangle : " + area(20));
+

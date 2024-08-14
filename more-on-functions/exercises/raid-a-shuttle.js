@@ -103,7 +103,7 @@ let deckMopItems = deckMops(cargoHold);
 //Raid a Shuttle
 let irs = function(nonSuspiciousFunctionValue, itemsInCargo) {
 
-  return `Raided ${nonSuspiciousFunction(nonSuspiciousFunctionValue)} kg of fuel from the tanks, and stole ${itemsInCargo[0]} and ${itemsInCargo[1]} from the cargo hold.`
+  return `Raided ${nonSuspiciousFunction(nonSuspiciousFunctionValue)} kg of fuel from the tanks, and stole '${itemsInCargo[0]}' and '${itemsInCargo[1]}' from the cargo hold.`
 };
 
 console.log(irs(nonSuspiciousFunctionValue,deckMopItems));

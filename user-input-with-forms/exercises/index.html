@@ -17,7 +17,17 @@
       method="POST"
     >
       <label> Test Name <input type="text" name="testName" /></label>
-      <button>Run Simulation</button>
+      <button type="submit">Run Simulation</button>
+      <script>
+        document
+          .getElementById("testForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const testName = document.getElementById("testName").value;
+            console.log("Submitted testName:", testName);
+          });
+      </script>
     </form>
   </body>
 </html>

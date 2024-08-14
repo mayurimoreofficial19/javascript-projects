@@ -2,4 +2,4 @@ function printMessage() {
     console.log("The future is now!");
 }
 
-setTimeout(printMessage, 5000);
+console.log(setTimeout(printMessage, 5000));
