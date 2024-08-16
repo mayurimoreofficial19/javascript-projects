@@ -3,12 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Rocket Simulation</title>
-    <style>
-      label {
-        display: block;
-        margin-bottom: 7px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <!-- TODO: add form here -->
@@ -16,18 +12,31 @@
       action="https://handlers.education.launchcode.org/request-parrot"
       method="POST"
     >
-      <label> Test Name <input type="text" name="testName" /></label>
+      <label> Test Name <input type="text" name="testName" value="" /></label>
+      <label>
+        Test Date <input type="date" name="testDate" value="08/19/2000"
+      /></label>
+      <select name="rocketType">
+        Rocket Type
+        <option value="1">Brant</option>
+        <option value="2">Lynx</option>
+        <option value="3">Orion</option>
+        <option value="4">Terrier</option>
+      </select>
+      <label
+        >Number of Rocket Boosters
+        <input type="number" name="boosterCount" min="0" max="9"
+      /></label>
+      <label>No Wind<input type="radio" name="windRating" value="0" /></label>
+      <label>Mild<input type="radio" name="windRating" value="10" /></label>
+      <label>Strong<input type="radio" name="windRating" value="20" /></label>
+      <label
+        >Use production grade servers<input
+          type="checkbox"
+          name="productionServers"
+          value="off"
+      /></label>
       <button type="submit">Run Simulation</button>
-      <script>
-        document
-          .getElementById("testForm")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const testName = document.getElementById("testName").value;
-            console.log("Submitted testName:", testName);
-          });
-      </script>
     </form>
   </body>
 </html>
