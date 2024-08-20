@@ -7,39 +7,44 @@
 
       function setSearchEngine() {
         console.log("I'm a searchEngine Function");
+      }
 
-        let selectedEngine = document.querySelector(
-          'input[name="engine"]:checked'
-        );
-
+      // TODO: register the handler
+      window.addEventListener("load", function () {
         let actions = {
           google: "https://www.google.com/search",
           bing: "https://www.bing.com/search",
           duckduckgo: "https://duckduckgo.com/",
           yahoo: "https://search.yahoo.com/",
         };
-      }
 
-      let engine = selectedEngine.value;
-
-      if (selectedEngine) {
-        let actionURL = actions[engine] || "https://www.google.com/";
-        document.getElementById("searchForm").setAttribute("action", actionURL);
-      } else {
-        console.log("No search engine selected");
-      }
-
-      // TODO: register the handler
-      window.addEventListener("load", function () {
         let form = document.getElementById("searchForm");
-        form.addEventListener("submit", setSearchEngine);
+
+        form.addEventListener("submit", function () {
+          let selectedEngine = document.querySelector(
+            "input[name=engine]:checked"
+          );
+
+          let searchText = document.querySelector("input[name=q]");
+
+          if (searchText.value === "") {
+            alert("Please enter requred text");
+          }
+
+          if (!selectedEngine) {
+            alert("Please select an option.");
+          }
+
+          let action = actions[selectedEngine.value];
+          form.setAttribute("action", action);
+        });
       });
     </script>
   </head>
 
   <body>
-    <form id="searchForm" action="" method="post">
-      <input type="text" name="q" value="" />
+    <form id="searchForm">
+      <input type="text" name="q" />
       <label><input type="radio" name="engine" value="google" /> Google</label>
 
       <label>
